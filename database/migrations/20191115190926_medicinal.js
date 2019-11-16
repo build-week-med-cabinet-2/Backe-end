@@ -35,7 +35,7 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
-  return knex.schema
+  return knex.schema 
   .dropTableIfExists('strain_dosage')
   .dropTableIfExists('dosages')
   .dropTableIfExists('strains')
