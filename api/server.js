@@ -5,6 +5,8 @@ const cors = require("cors");
 
 //import routes
 const strains = require('./strain-rtjs')
+const userRouter = require('../Users/usersRouter');
+const authRouter = require('../auth/auth-router');
 
 const server = express();
 
@@ -19,5 +21,9 @@ server.use("/api/strains", strain);
 server.get("/", (req, res) => {
   res.send("SERVER IS ON");
 });
+
+server.use('/api/auth', authRouter);
+server.use('/api/users', userRouter);
+
 
 module.exports = server;
