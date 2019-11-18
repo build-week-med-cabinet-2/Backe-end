@@ -10,8 +10,8 @@ module.exports = {
       directory: './database/migrations',
       tableName: 'dbmigrations',
     },
-    seeds: { directory: './database/seeds' },
-    useNullAsDefault: true,
+  //   seeds: { directory: './database/seeds' },
+  //   useNullAsDefault: true,
     // client: 'pg',
     // connection: {
     //   database: process.env.DB_DEV_DATABASE,
