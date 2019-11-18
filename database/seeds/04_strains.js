@@ -1,8 +1,8 @@
 
 exports.seed = function(knex) {
   // Deletes ALL existing entries
-  return knex('strains').truncate()
-    .then(function () {
+  // return knex('strains').truncate()
+  //   .then(function () {
       // Inserts seed entries
       return knex('strains').insert([
         {strain_name: 'ACDC', strain_type: 'sativa', strain_desc: 'High CBD:THC ratio. This strain induces little-to-no intoxicating effects and helps many patients treat various ailments like pain, anxiety, epilepsy, multiple sclerosis, and the negative effects of chemotherapy, all with a clear head.', benefits: 'realxed, happy, focused, pain, anxiety, depression, inflamation'},
@@ -13,5 +13,5 @@ exports.seed = function(knex) {
         {strain_name: 'Chill Panda', strain_type: 'indica', strain_desc: '60s vibe of all peace and no war this is a pure representation of that moment frozen in time. Afghan is great for totally numbing your body so you dont feel any pain you might be having.', benefits: 'uplifted, focused, pain, stress'},
 
       ]);
-    });
+    // });
 };
