@@ -16,7 +16,7 @@ server
   .use(cors())
   .use(morgan("combined"));
 
-server.use("/api/strains", strain);
+server.use("/api/strains", strains);
 
 server.get("/", (req, res) => {
   res.send("SERVER IS ON");
