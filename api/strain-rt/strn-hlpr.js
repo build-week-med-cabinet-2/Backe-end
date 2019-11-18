@@ -9,7 +9,8 @@ module.exports = {
 }
 
 function find() {
-
+    return db('strains')
+    
 }
 
 function findById() {
@@ -25,5 +26,5 @@ function update() {
 }
 
 function remove() {
-    
+
 }
