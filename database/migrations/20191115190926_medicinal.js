@@ -8,7 +8,7 @@ exports.up = function(knex) {
         .unique()
       t.string('strain_type', 128)
           .notNullable()
-      t.string('strain_desc', 500)
+      t.string('strain_desc', 6000)
   })
   .createTable('attributes', t => {
       t.increments('attribute_id')
@@ -19,9 +19,9 @@ exports.up = function(knex) {
         .inTable('strains')
         .onDelete('CASCADE')
         .onUpdate('CASCADE')
-      t.string('benefit', 500)
+      t.string('effects', 500)
         .notNullable()
-      t.string('attribute', 126)
+      t.string('flavors', 500)
         .notNullable()
   })
 

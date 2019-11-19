@@ -3,6 +3,13 @@ exports.up = function(knex) {
   return knex.schema
     .createTable('recommends', t  => {
         t.increments('approved_id')
+        t.integer('user_id')
+            .unsigned()
+            .notNullable()
+            .references('user_id')
+            .inTable('users')
+            .onDelete('CASCADE')
+            .onUpdate('CASCADE')
         t.integer('ailment_id')
             .unsigned()
             .notNullable()

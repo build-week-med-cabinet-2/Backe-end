@@ -5,12 +5,12 @@ exports.seed = function(knex) {
     .then(function () {
       // Inserts seed entries
       return knex('attributes').insert([
-        {strain_id: 1, benefit: 'pain relief', atribute: 'relaxed'},
-        {strain_id: 2, benefit: 'stress relief', atribute: 'happy'},
-        {strain_id: 3, benefit: 'anxiety relief', atribute: 'euphoric'},
-        {strain_id: 4, benefit: 'depression relief', atribute: 'energetic'},
-        {strain_id: 5, benefit: 'insomnia relief', atribute: 'sleepy'},
-        {strain_id: 6, benefit: 'nervousness relief', atribute: 'uplifted'},
+        {strain_id: 1, effects: 'Energetic,Creative,Focused,Happy,Euphoric', flavor: 'Sweet,Woody,Citrus'},
+        {strain_id: 2, effects: 'Happy,Euphoric,Energetic,Creative,Uplifted	', flavor: 'Earthy,Sweet,Skunk'},
+        {strain_id: 3, effects: 'Relaxed,Euphoric,Happy,Uplifted,Sleepy', flavor: 'Berry,Sweet,Blueberry'},
+        {strain_id: 4, effects: 'depression relief', flavor: 'energetic'},
+        {strain_id: 5, effects: 'Relaxed,Sleepy,Happy,Hungry,Euphoric', flavor: 'Earthy,Flowery,Woody'},
+        {strain_id: 6, effects: 'Relaxed,Sleepy,Happy,Euphoric,Hungry', flavor: 'Sweet,Woody,Earthy'},
       ]);
     });
 };
