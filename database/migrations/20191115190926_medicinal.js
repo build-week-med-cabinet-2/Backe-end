@@ -21,7 +21,7 @@ exports.up = function(knex) {
         .onUpdate('CASCADE')
       t.string('effects', 500)
         .notNullable()
-      t.string('flavors', 500)
+      t.string('flavor', 500)
         .notNullable()
   })
 
