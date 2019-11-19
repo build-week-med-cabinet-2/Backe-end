@@ -1,12 +1,12 @@
 const router = require('express').Router();
 
-const Users = require('./usersModel');
+const ailments = require('./ailmentModel');
 const restricted = require('../auth/authenticate-middleware');
 
 router.get('/', restricted, (req, res) => {
-  Users.find()
-    .then(users => {
-      res.json(users);
+  ailments.find()
+    .then(ailment => {
+      res.json(ailment);
     })
     .catch(err => res.send(err));
 });
