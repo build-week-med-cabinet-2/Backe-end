@@ -1,38 +1,47 @@
-// Update with your config settings.
-
-
 module.exports = {
-
   development: {
+    client: "sqlite3",
+    useNullAsDefault: true,
+    connection: {
+      filename: "./database/medcab.db3"
+    },
+    migrations: {
+      directory: "./database/migrations"
+    },
+    seeds: {
+      directory: "./database/seeds"
+    },
+    pool: {
+      afterCreate: (conn, done) => {
+        conn.run("PRAGMA foreign_keys = ON", done);
+      }
+    }
+  },
+  
+  testing: {
     client: 'sqlite3',
-    connection: { filename: './database/medcab.db3' },
+    connection: {
+      filename: './database/test.db3',
+    },
+    useNullAsDefault: true,
     migrations: {
       directory: './database/migrations',
-      tableName: 'dbmigrations',
     },
-  //   seeds: { directory: './database/seeds' },
-  //   useNullAsDefault: true,
-    // client: 'pg',
-    // connection: {
-    //   database: process.env.DB_DEV_DATABASE,
-    //   user: process.env.DB_DEV_USER,
-    //   password: process.env.DB_DEV_PASSWORD
-    // },
-    // migrations: {
-    //   directory: "./database/migrations"
-    // },
-    // seeds: {
-    //   directory: "./database/seeds"
-    // },
+    seeds: {
+      directory: './databaase/seeds',
+    },
   },
-    production: {
-      client: 'pg',
-      connection: process.env.DATABASE_URL,
-      migrations: {
-       directory: './database/migrations'
-      },
-      seeds: {
-        directory: './database/seeds'
-      },
+
+  production: {
+    client: "pg",
+    useNullAsDefault: true,
+    connection: process.env.DATABASE_URL,
+
+    migrations: {
+      directory: "./database/migrations"
     },
-  };
+    seeds: {
+      directory: "./database/seeds"
+    }
+  }
+};
