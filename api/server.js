@@ -18,7 +18,6 @@ server
   .use(morgan("combined"));
 
 
-
 server.get("/", (req, res) => {
   res.send("SERVER IS ON");
 });
