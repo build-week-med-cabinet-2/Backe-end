@@ -72,3 +72,9 @@ strn.delete('/:id', async (req, res) => {
         .json({ error: 'failed to delete strain from db'})
         })
 })
+
+
+
+
+
+module.exports = strn;

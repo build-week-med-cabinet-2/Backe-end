@@ -4,7 +4,7 @@ const morgan = require("morgan");
 const cors = require("cors");
 
 //import routes
-const strains = require('./strain-rtjs')
+const strains = require('./strain-rt/strn--rrtr')
 const userRouter = require('../Users/usersRouter');
 const authRouter = require('../auth/auth-router');
 
@@ -16,7 +16,7 @@ server
   .use(cors())
   .use(morgan("combined"));
 
-server.use("/api/strains", strain);
+server.use("/api/strains", strains);
 
 server.get("/", (req, res) => {
   res.send("SERVER IS ON");
