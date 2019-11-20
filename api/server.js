@@ -7,6 +7,7 @@ const cors = require("cors");
 const strains = require('./strain-rt/strn--rrtr')
 const userRouter = require('./Users/usersRouter');
 const authRouter = require('./auth/auth-router');
+const ailmentRouter = require('../ailment/ailmentRouter');
 
 const server = express();
 
@@ -17,10 +18,10 @@ server
   .use(morgan("combined"));
 
 
-
 server.get("/", (req, res) => {
   res.send("SERVER IS ON");
 });
+server.use('/api/ailments', ailmentRouter);
 server.use("/api/strains", strains);
 server.use('/api/auth', authRouter);
 server.use('/api/users', userRouter);
