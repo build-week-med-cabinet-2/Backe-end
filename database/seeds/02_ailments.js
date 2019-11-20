@@ -1,8 +1,8 @@
 
 exports.seed = function(knex) {
   // Deletes ALL existing entries
-  return knex('ailments').truncate()
-    .then(function () {
+  // return knex('ailments').truncate()
+    // .then(function () {
       // Inserts seed entries
       return knex('ailments').insert([
         {ailment: 'pain', a_desc: 'back pain', user_id: '1'},
@@ -13,5 +13,5 @@ exports.seed = function(knex) {
         {ailment: 'nerves', a_desc: 'new situations make me nervous', user_id: '1'},
     
       ]);
-    });
+    // });
 };
