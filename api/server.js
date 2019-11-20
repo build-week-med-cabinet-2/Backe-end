@@ -5,8 +5,8 @@ const cors = require("cors");
 
 //import routes
 const strains = require('./strain-rt/strn--rrtr')
-const userRouter = require('../Users/usersRouter');
-const authRouter = require('../auth/auth-router');
+const userRouter = require('./Users/usersRouter');
+const authRouter = require('./auth/auth-router');
 
 const server = express();
 
