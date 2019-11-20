@@ -4,37 +4,32 @@ module.exports = {
     find, 
     findById,
     add,
-    update,
-    remove
+    addAttr
 }
 
 function find() {
-    return db('strains')
+    return db
+    .select('*')
+    .from('attributes as a')
+    .join('strains as s', 'a.strain_id', '=', 's.strain_id')
 }
 
-function findById(id) {
-    return db('strains')
-        .where({ id })
+function findById(s_id) {
+    return db
+        .select('*')
+        .from('attributes as a')
+        .join('strains as s', 'a.strain_id', '=', 's.strain_id')
+        .where('a.strain_id', '=', s_id)
         .first()
 }
 
-function add() {
-    return db('strains')
-        .insert('strains')
+function add(strain) {
+return     db('strains')
+     .insert(strain, 'id')  
 }
 
-function update(id, strain) {
-    return db('strains')
-        .update(strain)
-        .where({ id })
-        .then(newStrain => {
-            return findById(id)
-        })
+function addAttr(attribute) {
+  return  db('attributes')
+    .insert(attribute, 'id')
 }
 
-function remove() {
-    return db("strains")
-        .where({ id })
-        .del()
-        .then(result => result);
-}
