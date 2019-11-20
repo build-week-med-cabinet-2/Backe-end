@@ -7,8 +7,8 @@ const cors = require("cors");
 const strains = require('./strain-rt/strn--rrtr')
 const userRouter = require('./Users/usersRouter');
 const authRouter = require('./auth/auth-router');
-const ailmentRouter = require('../ailment/ailmentRouter');
-
+const ailmentRouter = require('./ailment/ailmentRouter');
+const recommends = require('./recommend_rtr/rec_rtr')
 const server = express();
 
 server
@@ -25,6 +25,6 @@ server.use('/api/ailments', ailmentRouter);
 server.use("/api/strains", strains);
 server.use('/api/auth', authRouter);
 server.use('/api/users', userRouter);
-
+server.use('/api/recommends', recommends)
 
 module.exports = server;
