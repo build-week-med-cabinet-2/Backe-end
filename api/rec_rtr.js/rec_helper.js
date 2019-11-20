@@ -26,6 +26,7 @@ function findByStrain(id) {
     .join('strains as s', 'r.strain_id', '=', 's.strain_id')
     .join('attributes as b', 'r.attribute_id', '=', 'b.attribute_id')
     .where('', '=', id)
+    .orderBy(s.strain_name)
 }
 
 function findByAilment(id) {
@@ -37,4 +38,5 @@ function findByAilment(id) {
     .join('strains as s', 'r.strain_id', '=', 's.strain_id')
     .join('attributes as b', 'r.attribute_id', '=', 'b.attribute_id')
     .where('', '=', id)
+    
 }
