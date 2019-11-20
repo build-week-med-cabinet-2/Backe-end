@@ -1,8 +1,8 @@
 
 exports.seed = function(knex) {
   // Deletes ALL existing entries
-  return knex('strains').truncate()
-    .then(function () {
+  // return knex('strains').truncate()
+  //   .then(function () {
       // Inserts seed entries
       return knex('strains').insert([
         {strain_name: '	Cracker-Jack', strain_type: 'sativa', strain_desc: 'This cannabis sativa strain combines Jack Herer with Green Crack to produce a potent buzz. '},
@@ -13,5 +13,5 @@ exports.seed = function(knex) {
         {strain_name: 'Chocolate-Chunk', strain_type: 'indica', strain_desc: 'Chocolate Chunk by T.H. Seeds is a pure indica that will meld you with the couch.  Very fast flowering of 55 days, great for sea-of-green growing method.'},
 
       ]);
-    });
+    // });
 };
