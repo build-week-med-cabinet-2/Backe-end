@@ -24,6 +24,13 @@ exports.up = function(knex) {
             .inTable('strains')
             .onDelete('CASCADE')
             .onUpdate('CASCADE')
+        t.integer('attribute_id')
+          .unsigned()
+          .notNullable()
+          .references('attribute_id')
+          .inTable('attributes')
+          .onDelete('CASCADE')
+          .onUpdate('CASCADE')
     })
 };
 
