@@ -4,9 +4,9 @@ const morgan = require("morgan");
 const cors = require("cors");
 
 //import routes
-const strains = require('./strain-rtjs')
-const userRouter = require('../Users/usersRouter');
-const authRouter = require('../auth/auth-router');
+const strains = require('./strain-rt/strn--rrtr.js')
+const userRouter = require('./Users/usersRouter.js');
+const authRouter = require('./auth/auth-router');
 
 const server = express();
 
