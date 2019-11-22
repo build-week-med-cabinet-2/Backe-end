@@ -6,7 +6,7 @@ module.exports = {
     add,
     addAttr,
     deleted
-};
+}
 
 function find() {
     return db
@@ -38,5 +38,4 @@ function deleted(id) {
     return db('strains')
     .where({ id })
     .then(result => result)
-}
-
+  ]
