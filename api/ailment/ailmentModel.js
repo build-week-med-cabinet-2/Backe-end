@@ -5,10 +5,11 @@ module.exports = {
   find,
   findBy,
   findById,
+  remove
 };
 
 function find() {
-  return db('ailments').select('ailment', 'a_desc');
+  return db('ailments').select('ailment', 'a_desc', 'user_id');
 }
 
 function findBy(filter) {
@@ -17,16 +18,24 @@ function findBy(filter) {
     .where(filter);
 }
 
-async function add(ailment) {
+async function add(ailments) {
   
-   const [user_id] = await db('ailments').insert(ailment, 'user_id');
-   return findById(user_id);
+   const [ailment_id] = await db('ailments').insert(ailments);
+   return findById(ailment_id);
    
 }
 
-function findById(user_id) {
-  return db('ailment')
+function findById(ailment_id) {
+  return db('ailments')
    
-    .where({ user_id })
+    .where({ ailment_id })
     .first();
 }
+
+
+function remove(ailment_id) {
+  return db('ailments')
+    .where({ailment_id })
+    .del();
+};
+

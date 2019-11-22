@@ -5,10 +5,12 @@ module.exports = {
   find,
   findBy,
   findById,
+  findUserAilment,
+  
 };
 
 function find() {
-  return db('users').select('username', 'password');
+  return db('users').select('username', 'password', 'user_id');
 }
 
 function findBy(filter) {
@@ -30,3 +32,12 @@ function findById(user_id) {
     .where({ user_id })
     .first();
 }
+
+
+function findUserAilment(userId) {
+  return db
+	.select('a.ailment_id', 'a.ailment', 'a.a_desc', 'u.user_id as userId', 'u.username as user')
+	.from('ailments as a')
+	.join('users as u', 'a.user_id', '=', 'u.user_id')
+	.where('u.user_id', '=', userId);
+  };

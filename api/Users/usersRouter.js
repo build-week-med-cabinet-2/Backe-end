@@ -11,4 +11,17 @@ router.get('/', restricted, (req, res) => {
     .catch(err => res.send(err));
 });
 
+
+router.get('/:id/ailments', (req, res) => {
+  Users.findUserAilment(req.params.id)
+  .then(ail => {
+    res.status(200).json(ail)
+  }).catch(err => {
+    res.status(500).json(err)
+  })
+});
+
+
+
+
 module.exports = router;
