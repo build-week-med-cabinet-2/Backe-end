@@ -44,7 +44,6 @@ if(!strain_name || !strain_type) {
         })
         .catch(err => res.status(500).json({ error: `internal service issue see: ${err}`}))
 }
-})
 
 // strn.put('/:id', async (req, res) => {
 //         const edit = req.body

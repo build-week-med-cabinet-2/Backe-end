@@ -1,8 +1,8 @@
 
 exports.seed = function(knex) {
   // // Deletes ALL existing entries
-  return knex('users')
-    .then(function () {
+  // return knex('users')
+  //   .then(function () {
       // Inserts seed entries
       return knex('users').insert([
         {username:'admin', password: 'adminPass'}, //1
@@ -12,5 +12,5 @@ exports.seed = function(knex) {
         {username: 'john', password: 'smith'},
         {username: 'cori', password: 'cori'}
       ]);
-    });
+    // });
 };

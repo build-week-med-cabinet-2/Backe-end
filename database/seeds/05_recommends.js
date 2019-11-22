@@ -1,8 +1,8 @@
 
 exports.seed = function(knex) {
   // Deletes ALL existing entries
-  return knex('recommends').truncate()
-    .then(function () {
+  // return knex('recommends').truncate()
+    // .then(function () {
       // Inserts seed entries
       return knex('recommends').insert([
         {user_id: 1, ailment_id: 1, strain_id: 2, attribute_id: 2},
@@ -12,5 +12,5 @@ exports.seed = function(knex) {
         {user_id: 5, ailment_id: 5, strain_id: 3, attribute_id: 3},
         {user_id: 6, ailment_id: 6, strain_id: 6, attribute_id: 6}
       ]);
-    });
+    // });
 };

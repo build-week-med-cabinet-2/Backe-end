@@ -1,8 +1,8 @@
 
 exports.seed = function(knex) {
   // Deletes ALL existing entries
-  return knex('attributes').truncate()
-    .then(function () {
+  // return knex('attributes').truncate()
+    // .then(function () {
       // Inserts seed entries
       return knex('attributes').insert([
         {strain_id: 1, effects: 'Energetic,Creative,Focused,Happy,Euphoric', flavor: 'Sweet,Woody,Citrus'},
@@ -12,5 +12,5 @@ exports.seed = function(knex) {
         {strain_id: 5, effects: 'Relaxed,Sleepy,Happy,Hungry,Euphoric', flavor: 'Earthy,Flowery,Woody'},
         {strain_id: 6, effects: 'Relaxed,Sleepy,Happy,Euphoric,Hungry', flavor: 'Sweet,Woody,Earthy'},
       ]);
-    });
+    // });
 };
