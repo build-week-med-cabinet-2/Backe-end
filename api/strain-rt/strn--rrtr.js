@@ -46,29 +46,29 @@ if(!strain_name || !strain_type) {
 }
 })
 
-strn.put('/:id', async (req, res) => {
-        const edit = req.body
-        const { id } = req.params
-        if (!edit.strain_name || !edit.strain_type) {
-            return res.status(400).json({message: `no strain with id of ${id}found`})
-        }
-        try {
-            const str = await helper.findById(id)
+// strn.put('/:id', async (req, res) => {
+//         const edit = req.body
+//         const { id } = req.params
+//         if (!edit.strain_name || !edit.strain_type) {
+//             return res.status(400).json({message: `no strain with id of ${id}found`})
+//         }
+//         try {
+//             const str = await helper.findById(id)
            
-            if (!str) {
-                res.status(404).json({message: `no strain with id of ${id}found`})
-            } else {
-                await helper.update(id, edit)
-                const uS = await db.findById(id)
+//             if (!str) {
+//                 res.status(404).json({message: `no strain with id of ${id}found`})
+//             } else {
+//                 await helper.update(id, edit)
+//                 const uS = await db.findById(id)
     
-                res.status(200).json(uS)
-            }
-        } catch (err) {
-            res.status(500)
-            .json({ error: 'failed to get users from db'})
+//                 res.status(200).json(uS)
+//             }
+//         } catch (err) {
+//             res.status(500)
+//             .json({ error: 'failed to get users from db'})
         
-        }
-})
+//         }
+// })
 
 strn.delete('/:id', async (req, res) => {
     const id = req.params.id
