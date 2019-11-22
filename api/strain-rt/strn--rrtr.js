@@ -46,9 +46,6 @@ if(!strain_name || !strain_type) {
 }
 })
 
-<<<<<<< HEAD
-module.exports = strn
-=======
 strn.put('/:id', async (req, res) => {
         const edit = req.body
         const { id } = req.params
@@ -95,4 +92,3 @@ strn.delete('/:id', async (req, res) => {
 
 
 module.exports = strn;
->>>>>>> a484179fe6c60df9011ffca0e86eee6cade859a1

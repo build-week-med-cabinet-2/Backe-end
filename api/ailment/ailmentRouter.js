@@ -11,4 +11,11 @@ router.get('/', restricted, (req, res) => {
     .catch(err => res.send(err));
 });
 
+router.post('/', restricted, (req, res) => {
+  const body = req.body
+  ailments.add(body)
+  .then(newA => res.status(201).json(newA))
+  .catch(err => res.send(err));
+})
+
 module.exports = router;

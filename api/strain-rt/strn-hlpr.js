@@ -4,7 +4,8 @@ module.exports = {
     find, 
     findById,
     add,
-    addAttr
+    addAttr,
+    deleted
 }
 
 function find() {
@@ -33,3 +34,8 @@ function addAttr(attribute) {
     .insert(attribute, 'id')
 }
 
+function deleted(id) {
+    return db('strains')
+    .where({ id })
+    .then(result => result)
+}
