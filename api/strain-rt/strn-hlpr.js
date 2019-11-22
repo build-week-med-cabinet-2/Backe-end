@@ -1,4 +1,4 @@
-const db = require('../../database/db-config.js')
+const db = require('../../database/db-config.js');
 
 module.exports = {
     find, 
@@ -38,4 +38,4 @@ function deleted(id) {
     return db('strains')
     .where({ id })
     .then(result => result)
-}
+  ]

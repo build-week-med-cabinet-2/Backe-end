@@ -89,5 +89,23 @@ strn.delete('/:id', async (req, res) => {
 
 
 
-
 module.exports = strn;
+strn.delete('/:id', async (req, res) => {
+    const id = req.params.id
+    helper.remove(id)
+    .then(rem => {
+        if (rem > 0) {
+            res.status(200).json({message: `Strain with id of ${id} has been removed`, id: id})
+        } else {
+            res.status(404).json({errorMessage: `Strain with ${id} could not be found`})
+        }
+        
+    })
+    .catch(err => {
+        res.status(500)
+        .json({ error: 'failed to delete strain from db'})
+        })
+})
+
+module.exports = strn
+
