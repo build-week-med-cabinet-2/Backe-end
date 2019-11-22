@@ -1,11 +1,11 @@
-const db = require('../../database/db-config.js')
+const db = require('../../database/db-config.js');
 
 module.exports = {
     find, 
     findById,
     add,
     addAttr,
-    delete
+    deleted
 };
 
 function find() {
