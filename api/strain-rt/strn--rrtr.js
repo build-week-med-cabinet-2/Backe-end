@@ -20,9 +20,9 @@ strn.get('/:id', restricted, (req, res) => {
 strn.post('/', (req, res) => {
     console.log(req.body)
 
-const {strain_name, strain_type, strain_desc} = req.body
-const strain = {strain_name, strain_type, strain_desc}
-const {effects, flavor} = req.body
+const {strain_name, strain_type, strain_desc} = req.body;
+const strain = {strain_name, strain_type, strain_desc};
+const {effects, flavor} = req.body;
 
 
 if(!strain_name || !strain_type) {
@@ -42,6 +42,7 @@ if(!strain_name || !strain_type) {
            
             res.status(201).json(strain)
         })
+<<<<<<< HEAD
         .catch(err => res.status(500).json({ error: `internal service issue see: ${err}`}
         ))
 }
@@ -69,6 +70,10 @@ if(!strain_name || !strain_type) {
         
 //         }
 // })
+=======
+        .catch(err => res.status(500).json({ error: `internal service issue see: ${err}`}))
+};
+>>>>>>> 166578e6031cf70e4120ac1f7467ff3667a71c4e
 
 strn.delete('/:id', async (req, res) => {
     const id = req.params.id
@@ -78,12 +83,13 @@ strn.delete('/:id', async (req, res) => {
             res.status(200).json({message: `Strain with id of ${id} has been removed`, id: id})
         } else {
             res.status(404).json({errorMessage: `Strain with ${id} could not be found`})
-        }
+        };
         
     })
     .catch(err => {
         res.status(500)
         .json({ error: 'failed to delete strain from db'})
+<<<<<<< HEAD
         })
 })
 
@@ -106,3 +112,13 @@ strn.delete('/:id', async (req, res) => {
 })
 
 module.exports = strn;
+=======
+        });
+    })
+});
+
+
+
+
+module.exports = strn;
+>>>>>>> 166578e6031cf70e4120ac1f7467ff3667a71c4e

@@ -37,5 +37,10 @@ function addAttr(attribute) {
 function deleted(id) {
     return db('strains')
     .where({ id })
+<<<<<<< HEAD
     .then(result => result)
 }
+=======
+    .then(result => result);
+}
+>>>>>>> 166578e6031cf70e4120ac1f7467ff3667a71c4e
