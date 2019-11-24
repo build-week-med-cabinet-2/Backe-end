@@ -38,4 +38,4 @@ function deleted(id) {
     return db('strains')
     .where({ id })
     .then(result => result)
-  ]
+}

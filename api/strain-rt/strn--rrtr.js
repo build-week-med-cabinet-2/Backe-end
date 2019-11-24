@@ -3,7 +3,7 @@ const helper = require('./strn-hlpr.js')
 const restricted = require('../auth/authenticate-middleware')
 const strn = express.Router()
 
-strn.get('/',restricted, (req, res) => {
+strn.get('/', (req, res) => {
     helper.find()
     .then(strain => {
         res.status(200).json(strain)
@@ -42,9 +42,10 @@ if(!strain_name || !strain_type) {
            
             res.status(201).json(strain)
         })
-        .catch(err => res.status(500).json({ error: `internal service issue see: ${err}`}))
+        .catch(err => res.status(500).json({ error: `internal service issue see: ${err}`}
+        ))
 }
-
+})
 // strn.put('/:id', async (req, res) => {
 //         const edit = req.body
 //         const { id } = req.params
@@ -87,9 +88,6 @@ strn.delete('/:id', async (req, res) => {
 })
 
 
-
-
-module.exports = strn;
 strn.delete('/:id', async (req, res) => {
     const id = req.params.id
     helper.remove(id)
@@ -107,5 +105,4 @@ strn.delete('/:id', async (req, res) => {
         })
 })
 
-module.exports = strn
-
+module.exports = strn;
